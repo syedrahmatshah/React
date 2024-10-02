@@ -1,0 +1,135 @@
+/** @format */
+/* .card {
+  border: 1px solid hsl(0, 0%, 80%);
+  border-radius: 10px;
+  box-shadow: 5px, 5px, 5px, hsla(0, 0%, 100%, 0.1);
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+  max-width: 250px;
+  display: inline-block;
+}
+.card .card-image {
+  max-width: 60%;
+  height: auto;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+.card .card-title {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  color: hsl(0, 66%, 69%);
+}
+.card .card-text {
+  font-family: Arial, sans-serif;
+  color: hsl(0, 0%, 30%);
+} */
+/* Style for Card Component  ============================================================> */
+
+/* .button {
+  background-color: hsl(200, 100%, 50%);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+} */
+/* External StyleSheet for styling button ===============================================> */
+
+/* .Student {
+  font-family: Arial, sans-serif;
+  font-size: 2em;
+  padding: 10px;
+  border: 1px solid hsl(0, 3%, 22%);
+}
+.Student p {
+  margin: 0;
+} */
+/* This is the styling for Student component */
+
+/* .welcome-message {
+  font-size: 2.5em;
+  background-color: rgb(10, 146, 10);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 0;
+}
+
+.login-prompt {
+  font-size: 2.5em;
+  background-color: hsl(0, 95%, 38%);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 0;
+} */
+/* This is the styling for UserGreeting Component */
+
+/* .counter-container {
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+.count-display {
+  font-size: 10em;
+  margin-top: 0;
+  margin-bottom: 50px;
+}
+.counter-button {
+  width: 150px;
+  height: 50px;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 0px 5px;
+  background-color: hsl(240, 100%, 40%);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.counter-button:hover {
+  background-color: hsl(240, 100%, 20%);
+  color: white;
+} */
+/* This is the style for counter component */
+
+.color-picker-container {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+h1 {
+  margin: 50px;
+  font-size: 3rem;
+}
+.color-display {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid hsl(197, 71%, 73%);
+  border-radius: 25px;
+  margin-bottom: 25px;
+  transition: 0.25s ease;
+}
+.color-display p {
+  color: hsl(0, 0%, 20%);
+  font-size: 2rem;
+  text-align: center;
+}
+label {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+inpu[type="color"] {
+  width: 75px;
+  height: 50px;
+  padding: 5px;
+  border-radius: 10px;
+  border: 3px solid hsl(0, 0%, 80%);
+}
+/* This is the style for ColorPciker component */

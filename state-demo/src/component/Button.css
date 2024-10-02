@@ -1,0 +1,11 @@
+/** @format */
+
+.button {
+  background-color: slateblue;
+  padding: 10px 20px;
+  border-radius: 10px;
+  animation: opacity 0.3s;
+}
+.button:hover {
+  opacity: 0.5;
+}

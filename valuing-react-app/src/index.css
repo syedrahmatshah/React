@@ -1,0 +1,24 @@
+/** @format */
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+@font-face {
+  font-family: "CustomFont";
+  src: url("./assets/fonts/Satoshi-Medium.otf");
+}
+
+@layer components {
+  .link-style {
+    @apply flex items-center py-5 px-4 rounded-lg hover:bg-lightGreen cursor-pointer;
+  }
+  .icon-style {
+    @apply flex items-center text-white group-hover:text-primary w-6 h-6;
+  }
+  .text-style {
+    @apply ms-3 text-white group-hover:text-primary font-bold text-base font-satoshi;
+  }
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
