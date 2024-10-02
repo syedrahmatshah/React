@@ -4,14 +4,15 @@ import React, { useState } from "react";
 import Rectangle from "../assets/images/Rectangle.png";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import Input from "../components/elements/Input";
+import Button from "../components/elements/Button";
 
 const Admin = () => {
   const [password, setPassword] = useState(false);
-  const [type, setType] = useState("password");
+  const [isType, setIsType] = useState("password");
 
   const togglePasswordVisibility = () => {
     setPassword(!password);
-    setType(password ? "password" : "text"); // Toggle between 'password' and 'text'
+    setIsType(password ? "password" : "text"); // Toggle between 'password' and 'text'
   };
 
   return (
@@ -33,7 +34,7 @@ const Admin = () => {
         <Input
           type='text'
           placeholder='Email'
-          style='rounded-lg border-lightGreen p-4 border outline-none'
+          className='rounded-lg border-lightGreen p-4 border outline-none'
         />
         <label
           htmlFor=''
@@ -42,25 +43,26 @@ const Admin = () => {
         </label>
         <div className='flex items-center justify-between rounded-lg border-lightGreen outline-none  border bg-white'>
           <Input
-            style='rounded-lg border-lightGreen p-4 border outline-none '
-            type='password'
+            className='rounded-lg border-lightGreen p-4 border outline-none '
+            type={isType}
             placeholder='Password'
           />
           {password ? (
             <FaEye
-              className='text-faColor cursor-pointer'
+              className='text-faColor cursor-pointer mr-2.5'
               onClick={togglePasswordVisibility}
             />
           ) : (
             <FaEyeSlash
-              className='text-faColor cursor-pointer'
+              className='text-faColor cursor-pointer mr-2.5'
               onClick={togglePasswordVisibility}
             />
           )}
         </div>
-        <button className='mt-2 p-4 rounded-lg border-lightGreen border bg-primary text-white shadow-custom-shadow'>
-          Log in
-        </button>
+        <Button
+          className='button'
+          title='Log in'
+        />
       </div>
     </div>
   );

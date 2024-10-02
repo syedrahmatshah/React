@@ -18,6 +18,9 @@
   .text-style {
     @apply ms-3 text-white group-hover:text-primary font-bold text-base font-satoshi;
   }
+  .button {
+    @apply mt-2 p-4 w-full rounded-lg border-lightGreen border bg-primary text-white shadow-custom-shadow font-satoshi text-base font-medium;
+  }
 }
 @tailwind base;
 @tailwind components;

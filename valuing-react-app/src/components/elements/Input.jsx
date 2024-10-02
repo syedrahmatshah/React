@@ -2,11 +2,11 @@
 
 import React from "react";
 
-const input = ({ type, placeholder, style, icon }) => {
+const input = ({ type, placeholder, className, icon }) => {
   return (
     <>
       <input
-        className={style}
+        className={className}
         type={type}
         placeholder={placeholder}
       />
