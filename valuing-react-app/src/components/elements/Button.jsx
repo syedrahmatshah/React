@@ -2,10 +2,12 @@
 
 import React from "react";
 
-const button = ({ className, icon, title }) => {
+const button = ({ className, icon, title, onClick }) => {
   return (
     <div>
-      <button className={className}>
+      <button
+        className={className}
+        onClick={onClick}>
         {icon} {title}
       </button>
     </div>

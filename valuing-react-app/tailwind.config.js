@@ -15,6 +15,8 @@ module.exports = {
         placeholder: "#6FA2B5",
         black: "#000000",
         bColor: "#E0E0E0",
+        mbColor: "#E5E7EB",
+        mtextColor: "#333333",
         searchColor: " #9CA3AF",
         inputBorder: "#BDBDBD",
       },
@@ -22,6 +24,7 @@ module.exports = {
         Montserrat: ["Montserrat", "sans-serif"],
         satoshi: ["CustomFont"],
         Inter: ["Inter", "sans-serif"],
+        Poppins: ["Poppins", "sans - serif"],
       },
       boxShadow: {
         "custom-shadow": "0px 0px 24.7px 0px #072B398A",

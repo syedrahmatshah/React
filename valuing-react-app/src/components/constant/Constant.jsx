@@ -7,12 +7,13 @@ import {
 import { IoGitCompare, IoSettingsSharp } from "react-icons/io5";
 import { FaUserGroup } from "react-icons/fa6";
 import { MdOutlineModelTraining, MdContactSupport } from "react-icons/md";
+import LogIn from "../../pages/LogIn";
 
 export const sidebarLinks = [
   {
     title: "Admins",
     icon: <RiShieldUserFill />,
-    path: "",
+    path: "/LogIn",
   },
   {
     title: "User Management",

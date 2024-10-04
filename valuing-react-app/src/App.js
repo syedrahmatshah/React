@@ -1,13 +1,25 @@
 /** @format */
-// import Admin from "./pages/Admin";
+
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
-// import Admin from "../src/pages/Admin";
-function App() {
+import LogIn from "./pages/LogIn";
+
+const App = () => {
   return (
-    <>
-      {/* <Admin /> */}
-      <Dashboard />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route
+          path='/'
+          element={<Dashboard />}
+        />
+        <Route
+          path='/LogIn'
+          element={<LogIn />}
+        />
+      </Routes>
+    </BrowserRouter>
   );
-}
+};
+
 export default App;
