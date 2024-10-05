@@ -14,14 +14,14 @@ const input = ({
   return (
     <>
       <div>
-        <label className='mt-1 text-white font-satoshi text-base font-medium'>
-          {title}
-        </label>
+        <label className=' font-satoshi text-base font-medium '>{title}</label>
       </div>
-      <div className='w-full flex bg-white items-center  rounded-lg '>
+
+      <div
+        className={`w-full flex bg-white items-center  rounded-lg border border-mbColor ${className}`}>
         {icon1} {icon3}
         <input
-          className={`w-full ${className}`}
+          className={`w-full rounded-lg  border-lightGreen   outline-none ${className}`}
           type={type}
           placeholder={placeholder}
         />

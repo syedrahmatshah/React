@@ -19,6 +19,8 @@ module.exports = {
         mtextColor: "#333333",
         searchColor: " #9CA3AF",
         inputBorder: "#BDBDBD",
+        red: "#E95656",
+        selectPlace: "#969696",
       },
       fontFamily: {
         Montserrat: ["Montserrat", "sans-serif"],
@@ -29,6 +31,9 @@ module.exports = {
       boxShadow: {
         "custom-shadow": "0px 0px 24.7px 0px #072B398A",
         "button-shadow": "0px 0px 19.1px 0px #072B39",
+      },
+      backdropBlur: {
+        mBlur: "54px",
       },
     },
   },

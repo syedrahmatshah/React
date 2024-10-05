@@ -19,7 +19,7 @@ const LogIn = () => {
   };
 
   return (
-    <form className='font-Montserrat bg-primary w-screen h-screen p-5'>
+    <div className='font-Montserrat bg-primary w-screen h-screen p-5'>
       <img
         className='mx-auto'
         src={MainLogo}
@@ -29,23 +29,23 @@ const LogIn = () => {
         <h1 className='text-center font-semibold text-white text-2xl'>
           Log in to Super Admin Account
         </h1>
-        <div className='w-full'>
+        <div className='w-full text-white '>
           <Input
             htmlFor=''
             title='Email'
             type='text'
             placeholder='Email'
-            className='rounded-lg   border-lightGreen p-4  outline-none'
+            className='p-2'
           />
         </div>
 
-        <div className=' items-center justify-between rounded-lg  bg-whtie  border-lightGreen  '>
+        <div className=' items-center justify-between text-white rounded-lg    border-lightGreen  '>
           <Input
             htmlFor=''
             title='Password'
             type={isType}
             placeholder='Password'
-            className='outline-none rounded-lg p-4'
+            className='p-2'
             icon2={
               password ? (
                 <FaEyeSlash
@@ -67,7 +67,7 @@ const LogIn = () => {
           onClick={handleLogin}
         />
       </div>
-    </form>
+    </div>
   );
 };
 

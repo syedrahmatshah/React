@@ -5,6 +5,7 @@ import Sidebar from "../components/layout/Sidebar";
 import Header from "../components/layout/Header";
 import Button from "../components/elements/Button";
 import { IoMdAdd } from "react-icons/io";
+import AdminTable from "../components/tables/AdminTable";
 import { useState } from "react";
 import AddAdmin from "../components/modals/AddAdminModal/AddAdmin";
 
@@ -29,6 +30,7 @@ const Dashboard = () => {
           isVisible={modal}
           closeModal={() => setModal(false)}
         />
+        <AdminTable />
       </div>
     </div>
   );
