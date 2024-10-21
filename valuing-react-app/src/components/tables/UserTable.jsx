@@ -7,48 +7,36 @@ import { useState } from "react";
 import EditAdmin from "../modals/EditAdmin/EditAdmin";
 import DeleteModal from "../modals/DeleteModal/DeleteModal";
 import SuspendModal from "../modals/SuspendModal/SuspendModal";
-import { BannedUser } from "../../assets/icons/index";
+import { FaBan } from "react-icons/fa";
 
-const AdminTable = () => {
+const UserTable = () => {
   const [modal, setModal] = useState(false);
   const [deleteModalVisible, setDeleteModalVisible] = useState(false);
   const [suspendModalVisible, setSuspendModalVisible] = useState(false);
   const dataSource = [
     {
-      name: "Alex H",
+      name: "John Mac",
       email: "email@email.com",
-      role: "Admin",
+      role: "User",
+      plan: "Gold",
     },
     {
-      name: "Alex H",
+      name: "Isaak Smith",
       email: "email@email.com",
-      role: "Admin",
+      role: "User",
+      plan: "Promo Code",
     },
     {
-      name: "Alex H",
+      name: "Bella Johnson",
       email: "email@email.com",
-      role: "Admin",
-    },
-    {
-      name: "Alex H",
-      email: "email@email.com",
-      role: "Admin",
-    },
-    {
-      name: "Alex H",
-      email: "email@email.com",
-      role: "Admin",
-    },
-    {
-      name: "Alex H",
-      email: "email@email.com",
-      role: "Admin",
+      role: "User",
+      plan: "Premium",
     },
   ];
 
   const columns = [
     {
-      title: "Admin Name",
+      title: "User Name",
       dataIndex: "name",
     },
     {
@@ -60,9 +48,14 @@ const AdminTable = () => {
       dataIndex: "role",
     },
     {
+      title: "Subscription Plan",
+      dataIndex: "plan",
+      render: (text) => <span className='text-black font-bold'>{text}</span>,
+    },
+    {
       title: "", // Change column title to indicate actions
       dataIndex: "role", // Can keep this or use another dataIndex, it won't affect the render function
-      width: "40%",
+      width: "30%",
       render: () => (
         <div className='flex gap-5 justify-end pr-3'>
           <MdModeEditOutline
@@ -73,7 +66,7 @@ const AdminTable = () => {
             className='cursor-pointer text-tIconColor'
             onClick={() => setDeleteModalVisible(true)}
           />
-          <BannedUser
+          <FaBan
             className='cursor-pointer text-tIconColor'
             onClick={() => setSuspendModalVisible(true)}
           />
@@ -83,25 +76,25 @@ const AdminTable = () => {
   ];
 
   return (
-    <div>
+    <div className='custome-table-2'>
       <Table
         dataSource={dataSource}
         columns={columns}
       />
       <EditAdmin
-        title='Edit Admin Details'
+        title='Edit User Details'
         isVisible={modal}
         closeModal={() => setModal(false)}
       />
       <DeleteModal
-        title='Delete Admin Account'
-        message='  Are you sure you want to permanently delete this admin account?'
+        title='Delete User Account'
+        message='  Are you sure you want to permanently delete this user account?'
         isVisible={deleteModalVisible}
         closeModal={() => setDeleteModalVisible(false)}
       />
       <SuspendModal
-        title='Suspend Admin Account'
-        message='  Are you sure you want to temporarily suspend this admin account?'
+        title='Suspend User Acccount'
+        message='  Are you sure you want to temporarily suspend this user account?'
         isVisible={suspendModalVisible}
         closeModal={() => setSuspendModalVisible(false)}
       />
@@ -109,4 +102,4 @@ const AdminTable = () => {
   );
 };
 
-export default AdminTable;
+export default UserTable;

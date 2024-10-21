@@ -18,10 +18,19 @@ const SelectField = () => {
             className={clsx(
               " mt-3 block w-full appearance-none rounded border border-mbColor bg-white p-5 text-sm font-medium text-selectPlace",
               "focus:outline-none data-[focus]:outline-2 data-[focus]:-outline-offset-2 data-[focus]:outline-white/25",
-              "*:text-black"
+              "*:text-black "
             )}>
-            <option value='active'>Select and option</option>
-            <option value='paused'>Paused</option>
+            <option
+              style={{ background: "red" }}
+              value='active'
+              className='text-black bg-lightGreen hover:bg-gray-100'>
+              Select and option
+            </option>
+            <option
+              value='paused'
+              className='bg-red-300'>
+              Paused
+            </option>
             <option value='delayed'>Delayed</option>
             <option value='canceled'>Canceled</option>
           </HeadlessSelect>

@@ -4,7 +4,7 @@ import React from "react";
 import { FiSearch } from "react-icons/fi";
 import Input from "../elements/Input";
 
-const Header = () => {
+const Header = ({ title }) => {
   return (
     <nav className='w-full flex justify-between border-b border-bColor px-6 py-4'>
       <div className='items-center  w-5/12 rounded '>
@@ -17,7 +17,7 @@ const Header = () => {
       </div>
       <div>
         <p className='font-satoshi text-black text-base font-bold'>Username</p>
-        <p className='font-Inter text-xs font-normal text-black'>Super Admin</p>
+        <p className='font-Inter text-xs font-normal text-black'>{title}</p>
       </div>
     </nav>
   );

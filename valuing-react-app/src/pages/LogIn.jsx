@@ -9,9 +9,18 @@ import { useNavigate } from "react-router-dom";
 
 const LogIn = () => {
   const navigate = useNavigate();
-  const handleLogin = () => navigate("/Dashboard");
+  const [istext, setIsText] = useState("");
+  const [ispassword, setIsPassword] = useState("");
   const [password, setPassword] = useState(false);
   const [isType, setIsType] = useState("password");
+
+  const handleLoginSumbit = () => {
+    if (istext && ispassword) {
+      navigate("./Dashboard");
+    } else {
+      console.log(alert("fill all input"));
+    }
+  };
 
   const togglePasswordVisibility = () => {
     setPassword(!password);
@@ -35,7 +44,9 @@ const LogIn = () => {
             title='Email'
             type='text'
             placeholder='Email'
-            className='p-2'
+            className='p-2 text-black  rounded-lg'
+            value={istext}
+            onChange={(e) => setIsText(e.target.value)}
           />
         </div>
 
@@ -44,8 +55,10 @@ const LogIn = () => {
             htmlFor=''
             title='Password'
             type={isType}
-            placeholder='Password'
-            className='p-2'
+            placeholder='password'
+            value={ispassword}
+            onChange={(e) => setIsPassword(e.target.value)}
+            className='p-2 text-black rounded-lg'
             icon2={
               password ? (
                 <FaEyeSlash
@@ -64,7 +77,7 @@ const LogIn = () => {
         <Button
           className='button'
           title='Log in'
-          onClick={handleLogin}
+          onClick={handleLoginSumbit}
         />
       </div>
     </div>

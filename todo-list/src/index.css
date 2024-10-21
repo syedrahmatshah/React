@@ -1,0 +1,44 @@
+/** @format */
+body {
+  font-family: "Courier New", Courier, monospace;
+}
+h1 {
+  font-size: 3rem;
+  font-family: "Courier New", Courier, monospace;
+  color: violet;
+  text-align: center;
+  background-color: orange;
+  padding: 10px;
+  margin: 0;
+}
+
+form {
+  text-align: center;
+  gap: 10px;
+  background-color: orangered;
+  padding: 10px;
+}
+
+form select {
+  padding: 10px;
+  border-radius: 10px;
+}
+form input {
+  padding: 10px;
+  border-radius: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+ul {
+  background-color: brown;
+}
+
+ul li {
+  list-style: none;
+  font-size: 2rem;
+  color: wheat;
+}

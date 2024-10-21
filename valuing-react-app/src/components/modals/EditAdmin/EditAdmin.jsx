@@ -9,7 +9,7 @@ import SelectField from "../../elements/SelectField";
 import Button from "../../elements/Button";
 import Modal from "../../constant/Modal";
 
-const AddAdmin = ({ isVisible, closeModal, title }) => {
+const EditAdmin = ({ isVisible, closeModal, title }) => {
   const [password, setPassword] = useState(false);
   const [isType, setIsType] = useState("password");
 
@@ -17,20 +17,19 @@ const AddAdmin = ({ isVisible, closeModal, title }) => {
     setPassword(!password);
     setIsType(password ? "password" : "text"); // Toggle between 'password' and 'text'
   };
-
   return (
     <Modal
       isVisible={isVisible}
       closeModal={closeModal}
       title={title}>
       <div className='flex gap-2.5 mt-5 mb-2'>
-        <div className='flex-1 text-mtextColor font-bold font-satoshi text-sm mb-2 '>
+        <div className='flex-1 text-mtextColor font-bold font-satoshi text-sm mb-2'>
           <Input
             htmlFor=''
             title='Full Name'
             type='text'
             placeholder='Max mal'
-            className='rounded  p-2 '
+            className='rounded  p-2'
           />
         </div>
         <div className='flex-1 text-mtextColor font-bold font-satoshi text-sm mb-2'>
@@ -38,7 +37,7 @@ const AddAdmin = ({ isVisible, closeModal, title }) => {
             htmlFor=''
             title='Email'
             type='text'
-            className='rounded  p-2'
+            className='rounded p-2'
           />
         </div>
       </div>
@@ -48,7 +47,7 @@ const AddAdmin = ({ isVisible, closeModal, title }) => {
             htmlFor=''
             title='Password'
             type={isType}
-            className='rounded  p-2 text-mtextColor font-bold font-satoshi text-sm'
+            className='rounded p-2 text-mtextColor font-bold font-satoshi text-sm'
             icon3={<MdLockOutline className='w-5 h-5 text-searchColor ml-3' />}
             icon2={
               password ? (
@@ -70,7 +69,7 @@ const AddAdmin = ({ isVisible, closeModal, title }) => {
             htmlFor=''
             title='Confirm Password'
             type={isType}
-            className='rounded  p-2 rounded text-mtextColor font-bold font-satoshi text-sm '
+            className='rounded p-2 rounded text-mtextColor font-bold font-satoshi text-sm '
             icon3={<MdLockOutline className='w-5 h-5 text-searchColor ml-3' />}
             icon2={
               password ? (
@@ -92,7 +91,7 @@ const AddAdmin = ({ isVisible, closeModal, title }) => {
       <div className='mt-4 text-center'>
         <Button
           className='inline-flex  font-Poppins items-center text-white font-bold text-base border gap-2 rounded-md bg-primary py-3 px-6'
-          title='Create Admin'
+          title='Save Changes'
         />
         <Button
           className='inline-flex  font-Poppins items-center text-red font-bold text-base  gap-2 rounded-md  py-3 px-6'
@@ -104,4 +103,4 @@ const AddAdmin = ({ isVisible, closeModal, title }) => {
   );
 };
 
-export default AddAdmin;
+export default EditAdmin;
