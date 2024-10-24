@@ -7,13 +7,19 @@ import AddNewPlan from "../modals/AddNewPlan/AddNewPlan";
 const Card = ({ planName, price, features }) => {
   const [modal, setModal] = useState(false);
   return (
-    <div className='w-72 h-48 bg-primary rounded-lg p-4'>
+    <div className='w-72 h-auto bg-primary rounded-lg p-4'>
       <div className='flex justify-between'>
-        <h2>{planName}</h2>
-        <p>{price}</p>
+        <h2 className='font-Montserrat font-bold text-2xl text-white border-b'>
+          {planName}
+        </h2>
+        <p className='font-satoshi font-bold text-lg text-white'>{price}</p>
       </div>
       <ul>
-        <li>{features}</li>
+        {features.map((feature) => (
+          <li className='font-satoshi font-medium text-base text-white list-disc ml-3 pt-3 '>
+            {feature}
+          </li>
+        ))}
       </ul>
       <div className='mt-4 text-center '>
         <Button
@@ -27,7 +33,7 @@ const Card = ({ planName, price, features }) => {
         />
       </div>
       <AddNewPlan
-        title='Add New Plan'
+        title='Edit New Plan'
         isVisible={modal}
         closeModal={() => setModal(false)}
       />

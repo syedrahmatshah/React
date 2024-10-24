@@ -9,10 +9,7 @@ import PdfList from "../components/tabs/PdfList";
 import AddPdf from "../components/modals/AddPdf/AddPdf";
 
 const TrainingManagementVideo = () => {
-  // const navigate = useNavigate();
   const [modal, setModal] = useState(false);
-  // const [folder, setFolder] = useState("");
-  // const [data, setData] = useState(folderData);
   const [active, setActive] = useState("tab1");
   return (
     <div className='h-screen p-10 overflow-auto hide-scrollbar'>
@@ -63,17 +60,11 @@ const TrainingManagementVideo = () => {
       {active === "tab1" ? (
         <AddVideo
           isVisible={modal}
-          // value={video}
-          // onFolder={setVideo}
-          // handleCreateFolder={handleCreateVideo}
           closeModal={() => setModal(false)}
         />
       ) : (
         <AddPdf
           isVisible={modal}
-          // value={video}
-          // onFolder={setVideo}
-          // handleCreateFolder={handleCreateVideo}
           closeModal={() => setModal(false)}
         />
       )}

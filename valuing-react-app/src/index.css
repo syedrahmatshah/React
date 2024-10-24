@@ -20,6 +20,7 @@
   font-family: "customFont";
   font-weight: 400;
   color: #104a5f;
+  padding: 16px;
   font-size: 16px;
   border: none;
 }
@@ -99,6 +100,7 @@ th {
 .ant.-table-thead > tr > td {
   padding: 16px 24px; /* Adjust top/bottom and left/right padding as needed */
   font-weight: 400;
+  vertical-align: top;
 }
 
 .custome-table-3 .ant-table-thead::after {
@@ -112,7 +114,7 @@ th {
 .custome-table-3 th {
   background-color: #104a5f !important;
   color: white !important;
-  padding: 16px !important;
+  padding: 24px 16px !important;
   text-align: center !important;
   font-family: "customFont";
   font-weight: 400;
@@ -125,6 +127,21 @@ th {
 
 .custome-table-3 .ant-table table {
   border-spacing: 0 15px; /* 15px vertical space between rows */
+}
+.custom-table-4 th {
+  background-color: transparent !important;
+  border: 1px solid black;
+  color: #111827 !important;
+  padding: 20px !important;
+  text-align: center !important;
+  font-family: "customFont";
+  font-weight: 700;
+  font-size: 14px;
+}
+.custom-table-4 thead::after {
+  display: block;
+  content: "";
+  margin-bottom: 0;
 }
 @layer components {
   .link-style {

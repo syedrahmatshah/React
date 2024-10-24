@@ -49,9 +49,21 @@ export const sidebarLinks = [
 ];
 
 export const folderData = [
-  { image: <MdFolderCopy className='size-24' />, title: "Folder Name ..." },
-  { image: <MdFolderCopy className='size-24' />, title: "Folder Name ..." },
-  { image: <MdFolderCopy className='size-24' />, title: "Folder Name ..." },
+  {
+    id: 1,
+    image: <MdFolderCopy className='size-24' />,
+    title: "Folder Name ...",
+  },
+  {
+    id: 2,
+    image: <MdFolderCopy className='size-24' />,
+    title: "Folder Name ...",
+  },
+  {
+    id: 3,
+    image: <MdFolderCopy className='size-24' />,
+    title: "Folder Name ...",
+  },
   { image: <MdFolderCopy className='size-24' />, title: "Folder Name ..." },
   { image: <MdFolderCopy className='size-24' />, title: "Folder Name ..." },
   { image: <MdFolderCopy className='size-24' />, title: "Folder Name ..." },
@@ -218,16 +230,64 @@ export const plans = [
   {
     planName: "Gold",
     price: "€295/month",
-    features: ["3 Reports/month"],
+    feature: ["3 Reports/month"],
   },
   {
     planName: "Premium",
     price: "€495/month",
-    features: ["10 Reports/month"],
+    feature: ["10 Reports/month"],
   },
   {
     planName: "Platinium",
-    price: "€995month",
-    features: ["50 Report/month"],
+    price: "€995/month",
+    feature: ["50 Reports/month"],
+  },
+];
+
+export const dummyData = [
+  {
+    name: "John",
+    email: "john@email.com",
+    role: "Admin",
+  },
+  {
+    name: "John",
+    email: "john@email.com",
+    role: "Admin",
+  },
+  {
+    name: "John",
+    email: "john@email.com",
+    role: "Admin",
+  },
+  {
+    name: "John",
+    email: "john@email.com",
+    role: "Admin",
+  },
+  {
+    name: "John",
+    email: "john@email.com",
+    role: "Admin",
+  },
+  {
+    name: "John",
+    email: "john@email.com",
+    role: "Admin",
+  },
+  {
+    name: "John",
+    email: "john@email.com",
+    role: "Admin",
+  },
+  {
+    name: "John",
+    email: "john@email.com",
+    role: "Admin",
+  },
+  {
+    name: "John",
+    email: "john@email.com",
+    role: "Admin",
   },
 ];

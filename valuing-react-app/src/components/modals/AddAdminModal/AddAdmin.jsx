@@ -10,12 +10,28 @@ import Button from "../../elements/Button";
 import Modal from "../../constant/Modal";
 
 const AddAdmin = ({ isVisible, closeModal, title }) => {
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
+
+  const handleChange = (e) => {
+    const fieldName = e.target.name;
+    const fieldValue = e.target.value;
+
+    setFormData((prev) => ({
+      ...prev,
+      [fieldName]: fieldValue,
+    }));
+  };
   const [password, setPassword] = useState(false);
   const [isType, setIsType] = useState("password");
 
   const togglePasswordVisibility = () => {
     setPassword(!password);
-    setIsType(password ? "password" : "text"); // Toggle between 'password' and 'text'
+    setIsType(password ? "password" : "text");
   };
 
   return (
@@ -31,6 +47,9 @@ const AddAdmin = ({ isVisible, closeModal, title }) => {
             type='text'
             placeholder='Max mal'
             className='rounded  p-2 '
+            value={formData.fullName}
+            onChange={handleChange}
+            name='fullName'
           />
         </div>
         <div className='flex-1 text-mtextColor font-bold font-satoshi text-sm mb-2'>
@@ -39,6 +58,9 @@ const AddAdmin = ({ isVisible, closeModal, title }) => {
             title='Email'
             type='text'
             className='rounded  p-2'
+            value={formData.email}
+            onChange={handleChange}
+            name='email'
           />
         </div>
       </div>
@@ -48,6 +70,9 @@ const AddAdmin = ({ isVisible, closeModal, title }) => {
             htmlFor=''
             title='Password'
             type={isType}
+            value={formData.password}
+            onChange={handleChange}
+            name='password'
             className='rounded  p-2 text-mtextColor font-bold font-satoshi text-sm'
             icon3={<MdLockOutline className='w-5 h-5 text-searchColor ml-3' />}
             icon2={
@@ -70,6 +95,9 @@ const AddAdmin = ({ isVisible, closeModal, title }) => {
             htmlFor=''
             title='Confirm Password'
             type={isType}
+            value={formData.confirmPassword}
+            onChange={handleChange}
+            name='confirmPassword'
             className='rounded  p-2 rounded text-mtextColor font-bold font-satoshi text-sm '
             icon3={<MdLockOutline className='w-5 h-5 text-searchColor ml-3' />}
             icon2={

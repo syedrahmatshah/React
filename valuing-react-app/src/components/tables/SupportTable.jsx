@@ -1,12 +1,27 @@
 /** @format */
 import React from "react";
 import { Table } from "antd";
-
-import { FaEye } from "react-icons/fa";
+import { Fragment, useState } from "react";
+import { Listbox, Transition } from "@headlessui/react";
 import { RiArrowDropDownLine } from "react-icons/ri";
-import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 
+const customeOptions = [
+  { value: "resolved", label: "Resolved" },
+  { value: "rejected", label: "Rejected" },
+  { value: "pending", label: "Pending" },
+];
 const SupportTable = () => {
+  const [selectedOptions, setSelectedOptions] = useState({});
+
+  const getColor = (value) => {
+    return value === "resolved"
+      ? "bg-green"
+      : value === "rejected"
+      ? "bg-red"
+      : value === "pending"
+      ? "bg-blue"
+      : "bg-green ";
+  };
   const dataSource = [
     {
       name: "#453829",
@@ -76,28 +91,58 @@ const SupportTable = () => {
     {
       title: "Status",
       dataIndex: "status",
-      render: (text, record) => (
-        <select
-          defaultValue={record.status}
-          className='w-full  p-2 border border-none outline-none  rounded-full bg-green text-base font-satoshi font-medium text-white'>
-          <option
-            value='Resolved'
-            className='outline-none bg-green rounded-full p-2 text-base font-satoshi font-medium text-white mb-3'>
-            Resolved
-          </option>
-          <option
-            value='Rejected'
-            className='outline-none bg-darkRed rounded-full p-2 text-base font-satoshi font-medium text-white'>
-            Rejected
-          </option>
-          <option
-            value='Pending'
-            className='outline-none bg-blue rounded-full p-2 text-base font-satoshi font-medium text-white'>
-            Pending
-          </option>
-        </select>
-      ),
-      className: "text-left px-4 py-2",
+      render: (text, record) => {
+        const selectedOption =
+          selectedOptions[record.name] || customeOptions[0];
+        return (
+          <div className={`w-full border border-lightGreen rounded-lg `}>
+            <Listbox
+              value={selectedOption}
+              onChange={(option) =>
+                setSelectedOptions((prev) => ({
+                  ...prev,
+                  [record.name]: option,
+                }))
+              }>
+              <div className='relative w-36'>
+                <Listbox.Button
+                  className={`relative w-full  cursor-pointer border border-lightGreen rounded  font-Poppins font-medium text-sm text-white py-4 px-5 flex justify-between rounded-full ${getColor(
+                    selectedOption.value
+                  )}`}>
+                  <span className='block truncate'>{selectedOption.label}</span>
+                  <span className='pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2'>
+                    <RiArrowDropDownLine
+                      className='h-6 w-6 text-whtie'
+                      aria-hidden='true'
+                    />
+                  </span>
+                </Listbox.Button>
+                <Transition
+                  as={Fragment}
+                  leave='transition ease-in duration-100'
+                  leaveFrom='opacity-100'
+                  leaveTo='opacity-0'>
+                  <Listbox.Options className='absolute z-10 mt-1   w-full overflow-auto rounded bg-white border border-optionColor  text-sm font-medium text-optionColor   shadow-lg ring-1 ring-black/5 focus:outline-none sm:text-sm'>
+                    {customeOptions.map((option, optionIdx) => {
+                      return (
+                        <Listbox.Option
+                          key={optionIdx}
+                          className={`relative cursor-default select-none font-Poppins font-medium text-sm text-white  py-4 px-5 rounded-full my-2 flex justify-center items-center ${getColor(
+                            option.value
+                          )}`}
+                          value={option}>
+                          <span>{option.label}</span>
+                        </Listbox.Option>
+                      );
+                    })}
+                  </Listbox.Options>
+                </Transition>
+              </div>
+            </Listbox>
+          </div>
+        );
+      },
+      className: "text-left ",
     },
   ];
 

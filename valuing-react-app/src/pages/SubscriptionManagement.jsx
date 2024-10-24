@@ -7,21 +7,21 @@ import Input from "../components/elements/Input";
 
 const SubscriptionManagement = () => {
   return (
-    <div className='h-screen px-6'>
+    <div className='h-screen overflow-y-auto hide-scrollbar px-6'>
       <div className='py-6'>
         <Button
           className='button w-44 flex justify-center bg-lightGreen text-primary border-none shadow-inherit'
           title='Subscription Plans'
         />
       </div>
-      <div className='bg-placeholder py-4 px-6'>
+      <div className='bg-placeholder h-4/5 py-4 px-6'>
         <div className='flex justify-center gap-6 flex-wrap'>
           {plans.map((plan, index) => (
             <Card
               key={index}
               planName={plan.planName}
               price={plan.price}
-              features={plan.features}
+              features={plan.feature}
             />
           ))}
         </div>

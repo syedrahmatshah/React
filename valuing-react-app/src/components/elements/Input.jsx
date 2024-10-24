@@ -12,6 +12,7 @@ const input = ({
   title,
   value,
   onChange,
+  name,
 }) => {
   return (
     <>
@@ -20,7 +21,7 @@ const input = ({
       </div>
 
       <div
-        className={`w-full flex bg-white items-center   border border-mbColor   ${className}`}>
+        className={`w-full flex bg-white focus:bg-white items-center   border border-mbColor   ${className}`}>
         {icon1} {icon3}
         <input
           className={`w-full rounded-lg  border-lightGreen   outline-none  ${className}`}
@@ -28,6 +29,7 @@ const input = ({
           value={value}
           onChange={onChange}
           placeholder={placeholder}
+          name={name}
         />
         {icon2}
       </div>

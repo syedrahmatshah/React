@@ -9,7 +9,7 @@ import AddAdmin from "../components/modals/AddAdminModal/AddAdmin";
 const UserManagement = () => {
   const [modal, setModal] = useState(false);
   return (
-    <div className='h-screen'>
+    <div className='h-screen overflow-y-auto hide-scrollbar'>
       <div className='p-6'>
         <Button
           className='button w-48 flex items-center gap-x-3 border-none ml-auto'

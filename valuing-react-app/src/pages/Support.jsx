@@ -5,7 +5,7 @@ import SupportTable from "../components/tables/SupportTable";
 
 const Support = () => {
   return (
-    <div className='pt-14'>
+    <div className='h-screen pt-14'>
       <SupportTable />
     </div>
   );

@@ -31,6 +31,8 @@ module.exports = {
         checkboxLabel: "#111827",
         green: "#0BB645",
         darkRed: "#DD2025",
+        optionColor: "#406E7F",
+        darkBrown: "#393939",
       },
       fontFamily: {
         Montserrat: ["Montserrat", "sans-serif"],

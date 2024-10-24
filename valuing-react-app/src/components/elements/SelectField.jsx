@@ -1,47 +1,65 @@
 /** @format */
 
-import React from "react";
-import { Field, Label, Select as HeadlessSelect } from "@headlessui/react";
-import { FaCaretDown } from "react-icons/fa";
-// import { ChevronDownIcon } from "@heroicons/react/20/solid";
-import clsx from "clsx";
+import { Fragment, useState } from "react";
+import { Listbox, Transition } from "@headlessui/react";
+import { IoMdArrowDropdown } from "react-icons/io";
 
-const SelectField = () => {
+const people = [
+  { value: "active", label: "Active" },
+  { value: "Super Admin", label: "Super Admin" },
+];
+
+export default function SelectField() {
+  const [selected, setSelected] = useState(people[0]);
+
   return (
-    <div className='w-full  mt-2'>
-      <Field>
-        <Label className='text-mtextColor font-bold font-satoshi text-sm'>
-          Role
-        </Label>
-        <div className='relative flex items-center'>
-          <HeadlessSelect
-            className={clsx(
-              " mt-3 block w-full appearance-none rounded border border-mbColor bg-white p-5 text-sm font-medium text-selectPlace",
-              "focus:outline-none data-[focus]:outline-2 data-[focus]:-outline-offset-2 data-[focus]:outline-white/25",
-              "*:text-black "
-            )}>
-            <option
-              style={{ background: "red" }}
-              value='active'
-              className='text-black bg-lightGreen hover:bg-gray-100'>
-              Select and option
-            </option>
-            <option
-              value='paused'
-              className='bg-red-300'>
-              Paused
-            </option>
-            <option value='delayed'>Delayed</option>
-            <option value='canceled'>Canceled</option>
-          </HeadlessSelect>
-          <FaCaretDown
-            className='group pointer-events-none absolute top-4.5 right-2.5 size-4 text-mtextColor'
-            aria-hidden='true'
-          />
+    <div className={`w-full mt-4 border border-lightGreen rounded `}>
+      <Listbox
+        value={selected}
+        onChange={setSelected}>
+        <div className='relative'>
+          <Listbox.Button className='relative w-full  cursor-default border border-lightGreen rounded bg-white font-Poppins font-medium text-sm text-optionColor p-5 flex justify-between'>
+            <span className='block truncate'>{selected.label}</span>
+            <span className='pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2'>
+              <IoMdArrowDropdown
+                className='h-5 w-5 text-gray-400'
+                aria-hidden='true'
+              />
+            </span>
+          </Listbox.Button>
+          <Transition
+            as={Fragment}
+            leave='transition ease-in duration-100'
+            leaveFrom='opacity-100'
+            leaveTo='opacity-0'>
+            <Listbox.Options className='absolute z-10 mt-1  w-full overflow-auto rounded bg-white  text-sm font-medium text-optionColor  shadow-lg ring-1 ring-black/5 focus:outline-none sm:text-sm'>
+              {people.map((person, personIdx) => (
+                <Listbox.Option
+                  key={personIdx}
+                  className={({ active }) =>
+                    `relative cursor-default select-none font-Poppins font-medium text-sm text-optionColor p-5  ${
+                      active ? `bg-mbColor ` : ""
+                    } `
+                  }
+                  value={person}>
+                  {({ selected }) => (
+                    <>
+                      <span
+                        className={`block  ${
+                          selected
+                            ? "font-Poppins font-medium text-sm text-optionColor  "
+                            : ""
+                        }`}>
+                        {person.label}
+                      </span>
+                    </>
+                  )}
+                </Listbox.Option>
+              ))}
+            </Listbox.Options>
+          </Transition>
         </div>
-      </Field>
+      </Listbox>
     </div>
   );
-};
-
-export default SelectField;
+}
